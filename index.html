@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery</title>
+    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        // JavaScript function to change content dynamically
+        function changeContent(content) {
+            
+            document.getElementById("dynamic-content").innerHTML=content;
+            
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="navbar">
+            <div id="logo">
+                <img src="Images\seva bazaar logo.png" style="background-color: rgb(232,224,224); height: 100px;">
+            </div>
+            <div class="div">
+                <input type="text" placeholder="Search For Products....." style="height:30px; width: 400px;">
+                <button id="searchbutton" style="height: 30px;"><i class="fa-solid fa-magnifying-glass"></i>
+                    SEARCH</button>
+            </div>
+            <div class="nav3">
+                <a id="1" href="register.html"><button class="loginbasket" style="width: 150px;height: 30px;"><i class="fa-solid fa-user"></i> Sign In / Register </button></a>
+
+            </div>
+            <div class="nav3"> <button class="loginbasket" style="height: 30px;width: 80px"><i class="fa-solid fa-cart-shopping"></i> Basket</button>
+            </div>
+
+        </div>
+        <br>
+
+        <div id="cart" class="cart-container">
+            <!-- Cart items will be added dynamically here -->
+        </div>
+    
+        <script>
+            // JavaScript function to add items to the cart
+            function addToCart(productName, productPrice) {
+                // Get the cart element
+                var cart = document.getElementById("cart");
+                console.log("Triggered addToCart");
+                // Create a new div to hold the product information
+                var productDiv = document.createElement("div");
+                productDiv.classList.add("cart-item");
+    
+                // Set the inner HTML of the product div
+                productDiv.innerHTML = "<img src='" + productName + "' alt='Product'>" +
+                    "<p>" + productPrice + "</p>";
+    
+                // Append the product div to the cart
+                cart.appendChild(productDiv);
+            }
+    
+            // Add event listeners to all "Add to Cart" buttons
+            // Add event listener to the entire document for click events
+document.addEventListener("click", function (event) {
+    // Check if the clicked element is an "Add to Cart" button
+    if (event.target.classList.contains("add-to-cart")) {
+        // Get the product details from the button's data attributes
+        var productName = event.target.getAttribute("data-name");
+        var productPrice = event.target.getAttribute("data-price");
+
+        // Call the addToCart function with the product details
+        addToCart(productName, productPrice);
+    }
+});
+
+        </script>
+
+        <div id="navelement">
+
+            <button class="element"> 
+                <a class="element1" href="#" onclick="changeContent('<img src=\'Images\\WhatsApp Image 2024-03-05 at 6.20.41 PM.jpeg\' style=\'width: 1330px;\'><div id=\'category\'><h2>Popular Category</h2><div id=\'popularitems\'><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12sept23-popularcat-tea1.png\' alt=\'Tea\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12jan24-popularcat-coffee.png\' alt=\'Coffee\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12jan24-popularcat-soaps.png\' alt=\'Soaps\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12jan24-popularcat-healthdrinks.png\' alt=\'Health Drinks\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12sept23-popularcat-toothpaste.png\' alt=\'Toothpaste\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div><div><a type=\'button\' class=\'popularcategory\' href=\'#\'><img src=\'Images\\12jan24-popularcat-shampoos.png\' alt=\'Shampoos\' class=\'popularcategoryimages\' style=\'width: 120px; height: 120px; margin: 0px auto;\'></a></div></div><div id=\'category_name\'><b><a href=\'#\' class=\'categoryname_style\' style=\'padding-left: 100px;\'>  Tea</a><a href=\'#\' class=\'categoryname_style\' style=\'padding-left: 90px;\'>Coffee</a><a href=\'#\' class=\'categoryname_style\' style=\'padding-left: 80px;\'>Soaps</a><a href=\'#\' class=\'categoryname_style\' style=\'padding-left:50px;\'>Health Drinks</a><a href=\'#\' class=\'categoryname_style\' style=\'padding-left: 20px;\'>Toothpaste</a></b></div></div>')"> Home </a>
+            </button>
+            
+            <button class="element">
+                <a class="element1" href="#" onclick="changeContent('<div class=\'container\'><div class=\'product\'><img src=\'Images/valuepacks/image1.webp\' alt=\'Value Pack 1\'><div class=\'product-info\'><p class=\'product-price\'>$19.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image2.webp\' alt=\'Value Pack 2\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image3.webp\' alt=\'Value Pack 3\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image4.webp\' alt=\'Value Pack 4\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image5.webp\' alt=\'Value Pack 5\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image6.webp\' alt=\'Value Pack 6\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image7.webp\' alt=\'Value Pack 7\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image8.jpg\' alt=\'Value Pack 8\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image9.jpg\' alt=\'Value Pack 9\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image10.webp\' alt=\'Value Pack 10\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image11.webp\' alt=\'Value Pack 11\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/valuepacks/image12.webp\' alt=\'Value Pack 12\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><!-- Add more product sections as needed --></div>')"> Value Packs </a>
+            </button>
+            
+            <button class="element">
+                <a class="element1" href="#" onclick="changeContent('<div class=\'container\'><div class=\'product\'><img src=\'Images/homeappliances/image1.webp\' alt=\'Value Pack 1\'><div class=\'product-info\'><p class=\'product-price\'>$19.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image2.webp\' alt=\'Value Pack 2\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image3.webp\' alt=\'Value Pack 3\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image4.webp\' alt=\'Value Pack 4\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image5.webp\' alt=\'Value Pack 5\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image6.webp\' alt=\'Value Pack 6\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image7.webp\' alt=\'Value Pack 7\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image8.webp\' alt=\'Value Pack 8\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image9.webp\' alt=\'Value Pack 9\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image10.webp\' alt=\'Value Pack 10\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image11.webp\' alt=\'Value Pack 11\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/homeappliances/image12.jpg\' alt=\'Value Pack 12\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div></div>')"> Home Appliances </a>
+            </button>
+            
+            
+            <button class="element">
+                <a class="element1" href="#" onclick="changeContent('<div class=\'container\'><div class=\'product\'><img src=\'Images/cleaners/image1.webp\' alt=\'Value Pack 1\'><div class=\'product-info\'><p class=\'product-price\'>$19.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image2.webp\' alt=\'Value Pack 2\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image3.jpg\' alt=\'Value Pack 3\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image4.webp\' alt=\'Value Pack 4\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image5.webp\' alt=\'Value Pack 5\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image6.webp\' alt=\'Value Pack 6\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image7.webp\' alt=\'Value Pack 7\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image8.webp\' alt=\'Value Pack 8\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image9.webp\' alt=\'Value Pack 9\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image10.webp\' alt=\'Value Pack 10\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image11.jpg\' alt=\'Value Pack 11\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/cleaners/image12.webp\' alt=\'Value Pack 12\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><!-- Add more product sections as needed --></div>')"> Cleaners </a>
+            </button>
+            
+            <button class="element">
+                <a class="element1" href="#" onclick="changeContent('<div class=\'container\'><div class=\'product\'><img src=\'Images/detergents/image1.webp\' alt=\'Value Pack 1\'><div class=\'product-info\'><p class=\'product-price\'>$19.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image2.webp\' alt=\'Value Pack 2\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image3.webp\' alt=\'Value Pack 3\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image4.webp\' alt=\'Value Pack 4\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image5.webp\' alt=\'Value Pack 5\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image6.jpg\' alt=\'Value Pack 6\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image7.webp\' alt=\'Value Pack 7\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image8.webp\' alt=\'Value Pack 8\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image9.webp\' alt=\'Value Pack 9\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image10.jpg\' alt=\'Value Pack 10\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image11.webp\' alt=\'Value Pack 11\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/detergents/image12.webp\' alt=\'Value Pack 12\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div></div>')"> Detergents </a>
+            </button>
+
+            <button class="element">
+                <a class="element1" href="#" onclick="changeContent('<div class=\'container\'><div class=\'product\'><img src=\'Images/beauty/image1.webp\' alt=\'Value Pack 1\'><div class=\'product-info\'><p class=\'product-price\'>$19.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image2.webp\' alt=\'Value Pack 2\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image3.webp\' alt=\'Value Pack 3\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image4.webp\' alt=\'Value Pack 4\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image5.webp\' alt=\'Value Pack 5\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image6.webp\' alt=\'Value Pack 6\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image7.webp\' alt=\'Value Pack 7\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image8.webp\' alt=\'Value Pack 8\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image9.webp\' alt=\'Value Pack 9\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image10.webp\' alt=\'Value Pack 10\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image11.webp\' alt=\'Value Pack 11\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><div class=\'product\'><img src=\'Images/beauty/image12.webp\' alt=\'Value Pack 12\'><div class=\'product-info\'><p class=\'product-price\'>$24.99</p><button class=\'add-to-cart\'>Add to Cart</button></div></div><!-- Add more product sections as needed --></div>')"> Beauty </a>
+            </button>
+            
+            
+        </div>
+        <div id="dynamic-content">
+            <!-- Initial content will be displayed here -->
+            <img src="Images\WhatsApp Image 2024-03-05 at 6.20.41 PM.jpeg" style="width: 1330px;">
+        <div id="category"> 
+            <h2>Popular Category</h2>
+        <div id="popularitems">
+    
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12sept23-popularcat-tea1.png" alt="Tea" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12jan24-popularcat-coffee.png" alt="Coffee" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12jan24-popularcat-soaps.png" alt="Soaps" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12jan24-popularcat-healthdrinks.png" alt="Health Drinks" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12sept23-popularcat-toothpaste.png" alt="Toothpaste" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+            <div><a type="button" class="popularcategory" href="#"><img src="Images\12jan24-popularcat-shampoos.png" alt="Shampoos" class="popularcategoryimages" style="width: 120px; height: 120px; margin: 0px auto;"></a></div>
+
+
+        </div>
+        <div id="category_name">
+            <b>
+            <a href="#" class="categoryname_style" style="padding-left: 100px;">  Tea</a>
+            <a href="#" class="categoryname_style" style="padding-left: 90px;">Coffee</a>
+            <a href="#" class="categoryname_style" style="padding-left: 80px;">Soaps</a>
+            <a href="#" class="categoryname_style" style="padding-left:50px;">Health Drinks</a>
+            <a href="#" class="categoryname_style" style="padding-left: 20px;">Toothpaste</a>
+            <a href="#" class="categoryname_style" style="padding-left: 40px;">Shampoos</a>
+            </b>
+
+        </div>
+        </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
+
+
